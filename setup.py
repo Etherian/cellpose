@@ -2,7 +2,7 @@ import setuptools
 from setuptools import setup
 
 install_deps = ['numpy>=1.20.0', 'scipy', 'natsort',
-                'tifffile', 'tqdm', 
+                'tifffile', 'roifile', 'tqdm', 
                 'numba>=0.53.0', 
                 'llvmlite',
                 'torch>=1.6',
