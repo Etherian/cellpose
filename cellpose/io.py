@@ -77,12 +77,22 @@ def masks_to_roifile(
     masks: np.typing.NDArray[np.uint16],
     make_parents=False,
     include_suffix=True,
-    include_extension=True,
+    include_extension: Union[False, 'append', 'replace'] = 'append',
 ):
     """Saves masks as a ImageJ-compatible ROI .zip file
 
     Converts the masks in `masks` to ImageJ-compatible polygonal ROIs and saves
     those ROIs into an ImageJ-compatible .zip file.
+    
+    Args:
+        filepath: [todo]
+        masks: [todo]
+        make_parents: [todo]
+        include_suffix: [todo]
+        include_extension: [todo]
+    
+    Examples:
+        [todo]
 
     """
     path = Path(filepath)
@@ -97,7 +107,12 @@ def masks_to_roifile(
         stem = path.stem
 
     if include_extension and not path.suffix.endswith('.zip'):
-        extension = path.suffix + '.zip' 
+        if include_extension.lower() == 'append':
+            extension = path.suffix + '.zip'
+        elif include_extension.lower() == 'replace':
+            extension = '.zip'
+        else:
+            raise ValueError("include_extension must be 'append', 'replace', or falsy")
     else:
         extension = path.suffix
 
