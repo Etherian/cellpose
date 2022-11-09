@@ -468,7 +468,7 @@ def _save_sets(parent):
                  'masks': parent.cellpix,
                  'current_channel': (parent.color-2)%5,
                  'filename': parent.filename,
-                 'flows': parent.flows,
+                 # 'flows': parent.flows,
                  'zdraw': parent.zdraw,
                  'model_path': parent.current_model_path if hasattr(parent, 'current_model_path') else 0,
                  'flow_threshold': flow_threshold,
