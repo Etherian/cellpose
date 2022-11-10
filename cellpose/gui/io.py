@@ -486,7 +486,7 @@ def _save_sets(parent):
                                  parent.ChannelChoose[1].currentIndex()],
                  'img': image.squeeze(),
                  'filename': parent.filename,
-                 'flows': parent.flows,
+                 # 'flows': parent.flows,
                  'ismanual': parent.ismanual,
                  'manual_changes': parent.track_changes,
                  'model_path': parent.current_model_path if hasattr(parent, 'current_model_path') else 0,
